@@ -1,174 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ayushi Patel | Python Developer</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Icons -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- THEME VARIABLES ---------- */
-:root{
-  --bg:#ffffff;
-  --text:#111111;
-  --card:#f3f4f6;
-  --accent:#2563eb;
-}
-body.dark{
-  --bg:#0f172a;
-  --text:#e5e7eb;
-  --card:#1e293b;
-  --accent:#38bdf8;
+:root {
+  --bg: #020617;
+  --bg-soft: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
 }
 
-/* ---------- BASE ---------- */
-body{
-  margin:0;
-  font-family:Segoe UI, Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  transition:0.3s;
+/* Light mode */
+body.light {
+  --bg: #f8fafc;
+  --bg-soft: #e5e7eb;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
 }
-a{
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:500;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-header{
-  text-align:center;
-  padding:60px 20px;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
 }
-button{
-  background:var(--accent);
-  color:#fff;
-  border:none;
-  padding:8px 16px;
-  border-radius:20px;
-  cursor:pointer;
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  text-align: center;
+  padding: 90px 20px 70px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+header p {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.hero-links {
+  margin-top: 20px;
+}
+
+.hero-links a {
+  margin: 0 10px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.toggle-btn {
+  margin-top: 30px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 /* ---------- LAYOUT ---------- */
-section{
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
-}
-.card{
-  background:var(--card);
-  padding:25px;
-  border-radius:14px;
-  margin-bottom:20px;
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 70px 20px;
 }
 
-/* ---------- ANIMATIONS ---------- */
-.card, header{
-  animation:fade 0.8s ease;
+.section-title {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-@keyframes fade{
-  from{opacity:0; transform:translateY(15px)}
-  to{opacity:1; transform:translateY(0)}
+
+.card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* ---------- SKILLS ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.skill {
+  background: var(--bg-soft);
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ---------- PROJECTS ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.project h3 {
+  margin-bottom: 8px;
+}
+
+.project span {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ---------- CONTACT ---------- */
+.contact a {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------- FOOTER CTA ---------- */
+.cta {
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  padding: 60px 20px;
+}
+
+.cta h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  color: var(--muted);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ========== HEADER ========== -->
 <header>
   <h1>Ayushi Patel</h1>
-  <p><strong>Python Developer | Machine Learning | NLP | Backend Development</strong></p>
+  <p>Python Developer | Machine Learning | NLP | Backend Development</p>
 
-  <p>
-    <a href="https://www.linkedin.com/in/ayushi-patel-5b33ba265" target="_blank">
-      🔗 LinkedIn – Python Developer Profile
-    </a>
-    &nbsp; | &nbsp;
-    <a href="https://github.com/ayushi-1115" target="_blank">
-      💻 GitHub – Python & ML Projects
-    </a>
-  </p>
+  <div class="hero-links">
+    <a href="https://www.linkedin.com/in/ayushi-patel-5b33ba265" target="_blank">LinkedIn</a>
+    |
+    <a href="https://github.com/ayushi-1115" target="_blank">GitHub</a>
+  </div>
 
-  <button onclick="toggleTheme()">🌗 Toggle Light / Dark</button>
+  <button class="toggle-btn" onclick="toggleTheme()">Toggle Light / Dark</button>
 </header>
 
-<!-- ========== ABOUT ========== -->
 <section>
+  <h2 class="section-title">👩‍💻 About Me</h2>
   <div class="card">
-    <h2><i class="fa-solid fa-user"></i> About Me</h2>
     <p>
       Motivated Python Developer with hands-on experience in Machine Learning,
       Deep Learning, and Natural Language Processing. Strong understanding of
-      Python fundamentals, backend logic, data handling, and automation.
+      backend logic, data handling, and automation.
     </p>
     <p>
       Experienced in building real-world projects such as resume classification
       systems, machine learning prediction models, and automation tools.
-      Fast learner with strong problem-solving skills and the ability to work
-      independently and collaboratively.
     </p>
   </div>
 
-  <!-- ========== SKILLS ========== -->
-  <div class="card">
-    <h2><i class="fa-solid fa-code"></i> Skills</h2>
-    <p>
-      <strong>Programming:</strong> Python, OOP, Exception Handling<br>
-      <strong>ML / NLP:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Keras<br>
-      <strong>Frameworks:</strong> Flask, Django<br>
-      <strong>Frontend:</strong> HTML, CSS<br>
-      <strong>Database:</strong> SQL<br>
-      <strong>Tools:</strong> Git, GitHub, Selenium
-    </p>
-  </div>
-
-  <!-- ========== PROJECTS ========== -->
-  <div class="card">
-    <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
-
-    <p><strong>Resume Classifier (AI / NLP)</strong><br>
-      Machine learning–based resume classification system that automatically
-      categorizes resumes into job profiles.<br>
-      <em>Tech:</em> Python, NLP, Scikit-learn
-    </p>
-
-    <p><strong>Heart Disease Prediction (Machine Learning)</strong><br>
-      ML model to predict heart disease risk using clinical parameters,
-      including data preprocessing and model evaluation.<br>
-      <em>Tech:</em> Python, Pandas, Scikit-learn
-    </p>
-
-    <p><strong>Other Python & ML Projects</strong><br>
-      Automation scripts, small ML pipelines, and utility tools for
-      data handling and preprocessing.
-    </p>
-  </div>
-
-  <!-- ========== CONTACT ========== -->
-  <div class="card">
-    <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
-    <p>
-      📧 <a href="mailto:ayushisp1132@gmail.com">
-        ayushisp1132@gmail.com
-      </a><br><br>
-
-      🔗 <a href="https://www.linkedin.com/in/ayushi-patel-5b33ba265" target="_blank">
-        LinkedIn – Python Developer & Machine Learning Profile
-      </a><br><br>
-
-      💻 <a href="https://github.com/ayushi-1115" target="_blank">
-        GitHub – Python, ML & Automation Repositories
-      </a>
-    </p>
+  <h2 class="section-title">🧠 Skills</h2>
+  <div class="skills-grid">
+    <div class="skill">Python</div>
+    <div class="skill">Machine Learning</div>
+    <div class="skill">NLP</div>
+    <div class="skill">Flask</div>
+    <div class="skill">Django</div>
+    <div class="skill">SQL</div>
+    <div class="skill">Pandas</div>
+    <div class="skill">Scikit-learn</div>
+    <div class="skill">Git & GitHub</div>
+    <div class="skill">Selenium</div>
   </div>
 </section>
 
-<!-- ========== SCRIPT ========== -->
+<section>
+  <h2 class="section-title">📂 Projects</h2>
+  <div class="projects-grid">
+
+    <div class="card project">
+      <h3>Resume Classifier (AI / NLP)</h3>
+      <p>Machine-learning based system that categorizes resumes into job profiles.</p>
+      <span>Python • NLP • Scikit-learn</span>
+    </div>
+
+    <div class="card project">
+      <h3>Heart Disease Prediction</h3>
+      <p>ML model to predict heart disease risk using clinical parameters.</p>
+      <span>Python • Pandas • Scikit-learn</span>
+    </div>
+
+    <div class="card project">
+      <h3>Other Python & ML Projects</h3>
+      <p>Automation scripts, ML pipelines, and data-processing utilities.</p>
+      <span>Python • Automation • ML</span>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">📬 Contact</h2>
+  <div class="card contact">
+    <a href="mailto:ayushisp1132@gmail.com">📧 ayushisp1132@gmail.com</a>
+    <a href="https://www.linkedin.com/in/ayushi-patel-5b33ba265" target="_blank">🔗 LinkedIn Profile</a>
+    <a href="https://github.com/ayushi-1115" target="_blank">💻 GitHub Repositories</a>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>🚀 Interested in working together?</h2>
+  <p>Let’s connect and build something impactful.</p>
+</div>
+
 <script>
-function toggleTheme(){
-  document.body.classList.toggle("dark");
+function toggleTheme() {
+  document.body.classList.toggle("light");
 }
 </script>
 
