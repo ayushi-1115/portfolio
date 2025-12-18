@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ayushi Patel | Python Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ---------- THEME VARIABLES ---------- */
+:root{
+  --bg:#ffffff;
+  --text:#111111;
+  --card:#f3f4f6;
+  --accent:#2563eb;
+}
+body.dark{
+  --bg:#0f172a;
+  --text:#e5e7eb;
+  --card:#1e293b;
+  --accent:#38bdf8;
+}
+
+/* ---------- BASE ---------- */
+body{
+  margin:0;
+  font-family:Segoe UI, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:0.3s;
+}
+a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:500;
+}
+header{
+  text-align:center;
+  padding:60px 20px;
+}
+button{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+/* ---------- LAYOUT ---------- */
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:14px;
+  margin-bottom:20px;
+}
+
+/* ---------- ANIMATIONS ---------- */
+.card, header{
+  animation:fade 0.8s ease;
+}
+@keyframes fade{
+  from{opacity:0; transform:translateY(15px)}
+  to{opacity:1; transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+  <h1>Ayushi Patel</h1>
+  <p><strong>Python Developer | Machine Learning | NLP | Backend Development</strong></p>
+
+  <p>
+    <a href="https://www.linkedin.com/in/ayushi-patel-5b33ba265" target="_blank">
+      🔗 LinkedIn – Python Developer Profile
+    </a>
+    &nbsp; | &nbsp;
+    <a href="https://github.com/ayushi-1115" target="_blank">
+      💻 GitHub – Python & ML Projects
+    </a>
+  </p>
+
+  <button onclick="toggleTheme()">🌗 Toggle Light / Dark</button>
+</header>
+
+<!-- ========== ABOUT ========== -->
+<section>
+  <div class="card">
+    <h2><i class="fa-solid fa-user"></i> About Me</h2>
+    <p>
+      Motivated Python Developer with hands-on experience in Machine Learning,
+      Deep Learning, and Natural Language Processing. Strong understanding of
+      Python fundamentals, backend logic, data handling, and automation.
+    </p>
+    <p>
+      Experienced in building real-world projects such as resume classification
+      systems, machine learning prediction models, and automation tools.
+      Fast learner with strong problem-solving skills and the ability to work
+      independently and collaboratively.
+    </p>
+  </div>
+
+  <!-- ========== SKILLS ========== -->
+  <div class="card">
+    <h2><i class="fa-solid fa-code"></i> Skills</h2>
+    <p>
+      <strong>Programming:</strong> Python, OOP, Exception Handling<br>
+      <strong>ML / NLP:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Keras<br>
+      <strong>Frameworks:</strong> Flask, Django<br>
+      <strong>Frontend:</strong> HTML, CSS<br>
+      <strong>Database:</strong> SQL<br>
+      <strong>Tools:</strong> Git, GitHub, Selenium
+    </p>
+  </div>
+
+  <!-- ========== PROJECTS ========== -->
+  <div class="card">
+    <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
+
+    <p><strong>Resume Classifier (AI / NLP)</strong><br>
+      Machine learning–based resume classification system that automatically
+      categorizes resumes into job profiles.<br>
+      <em>Tech:</em> Python, NLP, Scikit-learn
+    </p>
+
+    <p><strong>Heart Disease Prediction (Machine Learning)</strong><br>
+      ML model to predict heart disease risk using clinical parameters,
+      including data preprocessing and model evaluation.<br>
+      <em>Tech:</em> Python, Pandas, Scikit-learn
+    </p>
+
+    <p><strong>Other Python & ML Projects</strong><br>
+      Automation scripts, small ML pipelines, and utility tools for
+      data handling and preprocessing.
+    </p>
+  </div>
+
+  <!-- ========== CONTACT ========== -->
+  <div class="card">
+    <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
+    <p>
+      📧 <a href="mailto:ayushisp1132@gmail.com">
+        ayushisp1132@gmail.com
+      </a><br><br>
+
+      🔗 <a href="https://www.linkedin.com/in/ayushi-patel-5b33ba265" target="_blank">
+        LinkedIn – Python Developer & Machine Learning Profile
+      </a><br><br>
+
+      💻 <a href="https://github.com/ayushi-1115" target="_blank">
+        GitHub – Python, ML & Automation Repositories
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ========== SCRIPT ========== -->
+<script>
+function toggleTheme(){
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
