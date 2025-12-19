@@ -18,7 +18,6 @@
 <meta property="og:url" content="https://ayushi-1115.github.io/portfolio/">
 <meta property="og:image" content="https://ayushi-1115.github.io/portfolio/preview.png">
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -70,7 +69,6 @@ body.light .navbar{background:rgba(248,250,252,.95)}
   text-decoration:none;
   font-weight:600;
 }
-.nav-links a.active{color:var(--accent)}
 .nav-toggle{display:none;font-size:1.5rem;cursor:pointer}
 
 /* MOBILE NAV */
@@ -122,9 +120,7 @@ section{max-width:1100px;margin:auto;padding:70px 20px}
   margin-bottom:30px;
   transition:.3s;
 }
-body.light .card{
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
+body.light .card{box-shadow:0 8px 25px rgba(0,0,0,.08)}
 .card:hover{transform:translateY(-6px)}
 
 .reveal{opacity:0;transform:translateY(40px);transition:.8s}
@@ -144,6 +140,57 @@ body.light .card{
   font-weight:600;
 }
 
+/* ===== SKILL TOOLTIP ===== */
+.tooltip{
+  position:relative;
+  cursor:pointer;
+}
+
+.tooltip-box{
+  position:absolute;
+  bottom:130%;
+  left:50%;
+  transform:translateX(-50%);
+  width:260px;
+  background:var(--card);
+  color:var(--text);
+  padding:14px;
+  border-radius:10px;
+  font-size:0.85rem;
+  line-height:1.5;
+  opacity:0;
+  pointer-events:none;
+  transition:all .3s ease;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+  z-index:100;
+}
+
+.tooltip-box::after{
+  content:"";
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  border-width:7px;
+  border-style:solid;
+  border-color:var(--card) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-box,
+.tooltip.active .tooltip-box{
+  opacity:1;
+  transform:translateX(-50%) translateY(-6px);
+}
+
+@media(max-width:768px){
+  .tooltip-box{bottom:auto;top:120%}
+  .tooltip-box::after{
+    top:auto;
+    bottom:100%;
+    border-color:transparent transparent var(--card) transparent;
+  }
+}
+
 /* PROJECT PLACEHOLDER */
 .project-img{
   height:160px;
@@ -161,15 +208,22 @@ body.light .card{
 .timeline{border-left:3px solid var(--accent);padding-left:30px}
 .timeline-item{margin-bottom:30px;position:relative}
 .timeline-dot{
-  position:absolute;left:-42px;top:6px;
-  width:14px;height:14px;border-radius:50%;
+  position:absolute;
+  left:-42px;
+  top:6px;
+  width:14px;
+  height:14px;
+  border-radius:50%;
   background:var(--accent)
 }
 
 /* CONTACT FORM */
 form input,form textarea{
-  width:100%;padding:12px;margin-bottom:12px;
-  border-radius:8px;border:1px solid #cbd5e1;
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:8px;
+  border:1px solid #cbd5e1;
 }
 form button{
   background:var(--accent);
@@ -182,7 +236,9 @@ form button{
 
 /* MODAL */
 .modal{
-  display:none;position:fixed;inset:0;
+  display:none;
+  position:fixed;
+  inset:0;
   background:rgba(0,0,0,.6);
 }
 .modal-content{
@@ -217,48 +273,98 @@ form button{
   <button class="toggle-btn" onclick="openResume()">📄 Download Resume</button>
 </header>
 
-<section id="about"><div class="card reveal">
-<h2 class="section-title">👩‍💻 About</h2>
-<p>Python Developer with hands-on experience in Machine Learning, NLP, and backend automation.</p>
-</div></section>
+<section id="about">
+  <div class="card reveal">
+    <h2 class="section-title">👩‍💻 About</h2>
+    <p>Python Developer with hands-on experience in Machine Learning, NLP, and backend automation.</p>
+  </div>
+</section>
 
-<section id="skills"><div class="reveal">
-<h2 class="section-title">🧠 Skills</h2>
-<div class="skills-grid">
-<div class="skill">Python</div><div class="skill">ML</div><div class="skill">NLP</div>
-<div class="skill">Flask</div><div class="skill">Django</div><div class="skill">SQL</div>
-</div></div></section>
+<section id="skills">
+  <div class="reveal">
+    <h2 class="section-title">🧠 Skills</h2>
 
-<section id="projects"><div class="reveal">
-<h2 class="section-title">📂 Projects</h2>
-<div class="card">
-<div class="project-img">Screenshot Coming Soon</div>
-<h3>Resume Classifier</h3>
-<p>ML-based resume classification system.</p>
-</div>
-</div></section>
+    <div class="skills-grid">
 
-<section id="experience"><div class="reveal">
-<h2 class="section-title">🕒 Experience</h2>
-<div class="timeline">
-<div class="timeline-item">
-<span class="timeline-dot"></span>
-<div class="card">Python & ML project development experience.</div>
-</div>
-</div>
-</div></section>
+      <div class="skill tooltip">
+        Python
+        <div class="tooltip-box">
+          I use Python to write clean, efficient code for backend development, automation,
+          and machine learning tasks including data processing and logic building.
+        </div>
+      </div>
 
-<section id="contact"><div class="card reveal">
-<h2 class="section-title">📬 Contact</h2>
+      <div class="skill tooltip">
+        Machine Learning
+        <div class="tooltip-box">
+          I build predictive models using preprocessing, training, evaluation,
+          and accuracy improvement with real datasets.
+        </div>
+      </div>
 
-<form id="contactForm">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Your Message" required></textarea>
-<button type="submit">Send Message</button>
-</form>
+      <div class="skill tooltip">
+        NLP
+        <div class="tooltip-box">
+          I work with text data such as resumes or documents using cleaning,
+          feature extraction, and classification models.
+        </div>
+      </div>
 
-</div></section>
+      <div class="skill tooltip">
+        Flask & Django
+        <div class="tooltip-box">
+          I build backend systems, manage routes, handle requests,
+          and connect applications to databases.
+        </div>
+      </div>
+
+      <div class="skill tooltip">
+        SQL
+        <div class="tooltip-box">
+          I design databases and write queries to manage structured
+          data efficiently.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="reveal">
+    <h2 class="section-title">📂 Projects</h2>
+    <div class="card">
+      <div class="project-img">Screenshot Coming Soon</div>
+      <h3>Resume Classifier</h3>
+      <p>ML-based resume classification system.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="reveal">
+    <h2 class="section-title">🕒 Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="card">Python & ML project development experience.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card reveal">
+    <h2 class="section-title">📬 Contact</h2>
+
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
 <div id="resumeModal" class="modal">
   <div class="modal-content">
@@ -272,27 +378,36 @@ form button{
 emailjs.init("YOUR_PUBLIC_KEY");
 
 document.getElementById("contactForm").addEventListener("submit",function(e){
-e.preventDefault();
-emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",this)
-.then(()=>alert("Message sent successfully!"));
-this.reset();
+  e.preventDefault();
+  emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",this)
+    .then(()=>alert("Message sent successfully!"));
+  this.reset();
 });
 
-function toggleTheme(){
-document.body.classList.toggle("light");
-}
-
-function toggleMenu(){
-document.querySelector(".nav-links").classList.toggle("show");
-}
-
+function toggleTheme(){document.body.classList.toggle("light")}
+function toggleMenu(){document.querySelector(".nav-links").classList.toggle("show")}
 function openResume(){document.getElementById("resumeModal").style.display="block"}
 function closeResume(){document.getElementById("resumeModal").style.display="none"}
 
 const reveals=document.querySelectorAll(".reveal");
 window.addEventListener("scroll",()=>reveals.forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-80)el.classList.add("active");
+  if(el.getBoundingClientRect().top<window.innerHeight-80)
+    el.classList.add("active");
 }));
+
+// Enable tooltip on tap (mobile)
+document.querySelectorAll(".tooltip").forEach(skill=>{
+  skill.addEventListener("click",e=>{
+    e.stopPropagation();
+    document.querySelectorAll(".tooltip").forEach(s=>{
+      if(s!==skill)s.classList.remove("active");
+    });
+    skill.classList.toggle("active");
+  });
+});
+document.body.addEventListener("click",()=>{
+  document.querySelectorAll(".tooltip").forEach(s=>s.classList.remove("active"));
+});
 </script>
 
 </body>
